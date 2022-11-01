@@ -1,0 +1,62 @@
+﻿<Window x:Class="SGSVostokLimited.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SGSVostokLimited"
+        mc:Ignorable="d"
+        Title="SGS Vostok Limited" Height="500" Width="800"
+        WindowStartupLocation="CenterScreen" Background="#F8A6B262">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="0.7*"/>
+            <RowDefinition/>
+            <RowDefinition Height="0.7*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
+            <StackPanel VerticalAlignment="Center">
+                <Label Grid.Row="1" Content="Город" FontSize="25" BorderThickness="0,0,0,1" BorderBrush="Black" 
+               VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+                <Border BorderThickness="1" BorderBrush="Red" Margin="0,10,0,0">
+                    <ComboBox MinWidth="200" FontSize="35" x:Name="cityChoiceComboBox"/>
+                </Border>
+            </StackPanel>
+
+            <StackPanel VerticalAlignment="Center" Margin="10,0,0,0">
+                <Label Grid.Row="1" Content="Цех" FontSize="25" BorderThickness="0,0,0,1" BorderBrush="Black" 
+               VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+                <Border BorderThickness="1" BorderBrush="Red" Margin="0,10,0,0">
+                    <ComboBox MinWidth="200" FontSize="35" x:Name="workshopChoiceComboBox" DropDownOpened="WorkshopChoiceComboBox_DropDownOpened"/>
+                </Border>
+            </StackPanel>
+
+            <StackPanel VerticalAlignment="Center" Margin="10,0,0,0">
+                <Label Grid.Row="1" Content="Сотрудник" FontSize="25" BorderThickness="0,0,0,1" BorderBrush="Black" 
+               VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+                <Border BorderThickness="1" BorderBrush="Red" Margin="0,10,0,0">
+                    <ComboBox MinWidth="200" FontSize="35" x:Name="employeeChoiceComboBox" DropDownOpened="EmployeeChoiceComboBox_DropDownOpened"/>
+                </Border>
+            </StackPanel>
+        </StackPanel>
+
+        <Label Grid.Row="1" Content="Бригада: " FontSize="35" BorderThickness="0,0,0,1" BorderBrush="Black" 
+               VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="brigadeLabel"/>
+
+        <StackPanel VerticalAlignment="Center" Grid.Row="2">
+            <Label Grid.Row="1" Content="Смена №" FontSize="25" BorderThickness="0,0,0,1" BorderBrush="Black" 
+               VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+            <TextBox  FontSize="35" x:Name="shiftNumberTextBox" MinWidth="250" HorizontalContentAlignment="Center"
+                    VerticalAlignment="Center" BorderBrush="Red" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+        </StackPanel>
+
+        <Button Content="Сохранить" x:Name="saveButton" Click="SaveButton_Click"  Grid.Row="3" FontSize="35" VerticalAlignment="Center"
+                    BorderThickness="0,0,0,2" BorderBrush="Gray" Background="#F8A6B262" Foreground="Gray" FontWeight="Bold" HorizontalAlignment="Center"/>
+    </Grid>
+</Window>
